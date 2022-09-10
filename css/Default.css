@@ -591,6 +591,36 @@ header{
   width: 100%;
   position: relative;
 }
+
+.skillWrap{
+  position: absolute;
+  left: 20%;
+  top:50%;
+  transform: translateY(-50%);
+  width:68%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-radius: 10px;
+}
+.skillWrap .item{
+  width:25%;
+  padding:40px 0;
+}
+
+
+.skillWrap .item img{
+  height: 100px;
+  transition: all 0.8s;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.skillWrap .item:hover img{
+  transform: scale(1.5);
+}
 .contentContainer {
   background:#efefef;
   padding:20px;
