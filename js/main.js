@@ -53,24 +53,45 @@ buttons.forEach(btn => {
 });
 
 
-$('.videobox .flip, .videobox2 .flip').on('click',function(e){
+$('.videobox .flip').on('click',function(e){
   e.preventDefault();
 
-  $('.view').fadeIn();
 
   let key = $(this).find('mark').text();
   let src = `<iframe width="1280" height="720" src="https://www.youtube.com/embed/${key}" title="고메네 수제간식 풀영상❣" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
 
 
-$('.view').find('figure').html(src);
+$('.preVid').find('figure').html(src);
+
+
+let titTxt = $(this).find('.back').find('h2').html();
+let disTxt = $(this).find('.back').find('p').html();
+
+$('figcaption').find('h3').html(titTxt);
+$('figcaption').find('p').html(disTxt)
 
 });
 
 
-$('.view button, .view .closeWrap').on('click',function(){
+
+////window Scroll;
 
 
-  $('.view').fadeOut();
-  $('.view figure').html('');
+let whoOffset = $('.who').offset().top;
+let nxtOffset = $('.skills').offset().top;
 
-});
+
+$(window).on('scroll',function(){
+
+  let scr = $(this).scrollTop();
+
+  if(scr >= whoOffset - 200 && scr <= nxtOffset + 200){
+
+    $('.who').addClass('active');
+  }else{
+    $('.who').removeClass('active');
+  }
+
+  
+
+})
